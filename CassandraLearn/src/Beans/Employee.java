@@ -1,107 +1,90 @@
 package Beans;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "employee")
+import com.anotation.ModelType;
+import com.anotation.Property;
+
+@ModelType("employee")
 public class Employee implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	int emp_id;
-	String emp_city;
-	String emp_email;
-	String emp_last_name;
-	String emp_name;
-	String emp_phone;
-	BigInteger emp_salary;
+	@Property("EMP_ID")
+	int id;
+	@Property("EMP_CITY")
+	String city;
+	@Property("EMP_EMAIL")
+	String email;
+	@Property("EMP_LAST_NAME")
+	String lastname;
+	@Property("EMP_NAME")
+	String name;
+	@Property("EMP_PHONE")
+	String phone;
+	@Property("EMP_SALARY")
+	BigDecimal salary;
 
-	public Employee() {
-		super();
+	public int getId() {
+		return id;
 	}
 
-	public Employee(int emp_id, String emp_city, String emp_email,
-			String emp_last_name, String emp_name, String emp_phone,
-			BigInteger emp_salary) {
-		super();
-		this.emp_id = emp_id;
-		this.emp_city = emp_city;
-		this.emp_email = emp_email;
-		this.emp_last_name = emp_last_name;
-		this.emp_name = emp_name;
-		this.emp_phone = emp_phone;
-		this.emp_salary = emp_salary;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public int getEmp_id() {
-		return emp_id;
+	public String getCity() {
+		return city;
 	}
 
-	@XmlElement
-	public void setEmp_id(int emp_id) {
-		this.emp_id = emp_id;
+	public void setCity(String city) {
+		this.city = city;
 	}
 
-	public String getEmp_city() {
-		return emp_city;
+	public String getEmail() {
+		return email;
 	}
 
-	@XmlElement
-	public void setEmp_city(String emp_city) {
-		this.emp_city = emp_city;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getEmp_last_name() {
-		return emp_last_name;
+	public String getLastname() {
+		return lastname;
 	}
 
-	@XmlElement
-	public void setEmp_last_name(String emp_last_name) {
-		this.emp_last_name = emp_last_name;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
-	public String getEmp_name() {
-		return emp_name;
+	public String getName() {
+		return name;
 	}
 
-	public String getEmp_email() {
-		return emp_email;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public void setEmp_email(String emp_email) {
-		this.emp_email = emp_email;
+	public String getPhone() {
+		return phone;
 	}
 
-	@XmlElement
-	public void setEmp_name(String emp_name) {
-		this.emp_name = emp_name;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
-	public String getEmp_phone() {
-		return emp_phone;
+	public BigDecimal getSalary() {
+		return salary;
 	}
 
-	@XmlElement
-	public void setEmp_phone(String emp_phone) {
-		this.emp_phone = emp_phone;
-	}
-
-	public BigInteger getEmp_salary() {
-		return emp_salary;
-	}
-
-	@XmlElement
-	public void setEmp_salary(BigInteger emp_salary) {
-		this.emp_salary = emp_salary;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public void setSalary(BigDecimal salary) {
+		this.salary = salary;
 	}
 
 }

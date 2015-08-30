@@ -25,6 +25,9 @@ public class ConnectFactory {
 	}
 
 	public ResultSet executeQuery(String query) {
+	 
+		
+		
 		return session.execute(query);
 	}
 
