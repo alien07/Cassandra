@@ -1,6 +1,5 @@
 package Datasource;
 
-
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Session;
@@ -25,9 +24,6 @@ public class ConnectFactory {
 	}
 
 	public ResultSet executeQuery(String query) {
-	 
-		
-		
 		return session.execute(query);
 	}
 

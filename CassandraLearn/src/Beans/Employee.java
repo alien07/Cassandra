@@ -1,35 +1,47 @@
 package Beans;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.math.BigInteger;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import com.anotation.ModelType;
-import com.anotation.Property;
-
-@ModelType("employee")
+@Entity
+@Table(name = "emp")
 public class Employee implements Serializable {
 
 	/**
 	 * 
 	 */
-	@Property("EMP_ID")
+	private static final long serialVersionUID = 1555141932595663642L;
+
+	/**
+	 * 
+	 */
+
+	@Id
+	@Column(name = "emp_id")
 	int id;
-	@Property("EMP_CITY")
+
+	@Column(name = "emp_city")
 	String city;
-	@Property("EMP_EMAIL")
+
+	@Column(name = "emp_email")
 	String email;
-	@Property("EMP_LAST_NAME")
+
+	@Column(name = "emp_last_name")
 	String lastname;
-	@Property("EMP_NAME")
+
+	@Column(name = "emp_name")
 	String name;
-	@Property("EMP_PHONE")
+
+	@Column(name = "emp_phone", length = 12)
 	String phone;
-	@Property("EMP_SALARY")
-	BigDecimal salary;
+
+	@Column(name = "emp_salary", scale = 13, precision = 2)
+	BigInteger salary;
 
 	public int getId() {
 		return id;
@@ -79,11 +91,11 @@ public class Employee implements Serializable {
 		this.phone = phone;
 	}
 
-	public BigDecimal getSalary() {
+	public BigInteger getSalary() {
 		return salary;
 	}
 
-	public void setSalary(BigDecimal salary) {
+	public void setSalary(BigInteger salary) {
 		this.salary = salary;
 	}
 

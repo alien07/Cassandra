@@ -1,19 +1,9 @@
 package Datasource;
 
+import Beans.Employee;
+
 import com.dao.CassandraDao;
 
-public class EmployeDao<Employee> extends CassandraDao {
- 
-	 
-	@Override
-	public void save(Object t) {
-		// TODO Auto-generated method stub
-		
-	}
+public class EmployeDao extends CassandraDao<Employee> {
 
-	 
-
-	
-	
-	
 }
